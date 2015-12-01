@@ -23,16 +23,17 @@
   ],
   "autoload": {
     "psr-4": {
-      "Depot\\EventStore\\Serialization\\Adapter\\MoniiReflectionPropertiesSerializer": "src"
+      "Depot\\EventStore\\Serialization\\Adapter\\MoniiReflectionPropertiesSerializer\\": "src"
     }
   },
   "require": {
     "depot/contract": "^0.0@dev",
-    "depot/event-store": "^0.0@dev"
+    "depot/event-store": "^0.0@dev",
+    "monii/reflection-properties-serializer": "^0.0@dev"
   },
   "autoload-dev": {
     "psr-4": {
-      "Depot\\Testing\\Unit\\EventStore\\Serialization\\Adapter\\MoniiReflectionPropertiesSerializer": "tests/unit"
+      "Depot\\Testing\\Unit\\EventStore\\Serialization\\Adapter\\MoniiReflectionPropertiesSerializer\\": "tests/unit"
     }
   },
   "require-dev": {
