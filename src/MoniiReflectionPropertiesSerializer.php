@@ -1,21 +1,20 @@
 <?php
 
-namespace Monii\AggregateEventStorage\EventStore\Serialization\Adapter\ReflectionProperties;
+namespace Depot\EventStore\Serialization\Adapter\MoniiReflectionPropertiesSerializer;
 
-use Monii\Serialization\ReflectionPropertiesSerializer\ReflectionPropertiesSerializer as MoniiReflectionPropertiesSerializer;
-use Monii\AggregateEventStorage\EventStore\Serialization\Serializer;
-use Monii\AggregateEventStorage\Contract\ContractResolver;
-use Monii\AggregateEventStorage\Contract\Contract;
+use Depot\Contract\ContractResolver;
+use Depot\Contract\Contract;
+use Depot\EventStore\Serialization\Serializer;
+use Monii\Serialization\ReflectionPropertiesSerializer\ReflectionPropertiesSerializer;
 
-
-class ReflectionPropertiesSerializer implements Serializer
+class MoniiReflectionPropertiesSerializer implements Serializer
 {
     public function __construct(
         ContractResolver $contractResolver,
-        MoniiReflectionPropertiesSerializer $serializer = null
+        ReflectionPropertiesSerializer $serializer = null
     ) {
         $this->contractResolver = $contractResolver;
-        $this->serializer = $serializer ?: new MoniiReflectionPropertiesSerializer();
+        $this->serializer = $serializer ?: new ReflectionPropertiesSerializer();
     }
 
     public function canSerialize(
